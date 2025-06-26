@@ -21,10 +21,10 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <SidebarProvider>
-          <div className="min-h-screen flex w-full bg-gray-50">
+          <div className="min-h-screen flex w-full bg-gradient-to-br from-gray-50 via-white to-blue-50">
             <AppSidebar />
             <main className="flex-1 flex flex-col">
-              <div className="sticky top-0 z-10 bg-white border-b border-gray-200 p-4">
+              <div className="sticky top-0 z-10 bg-white/80 backdrop-blur-md border-b border-gray-200/50 p-4">
                 <SidebarTrigger className="lg:hidden" />
               </div>
               <div className="flex-1 p-6 overflow-auto">
