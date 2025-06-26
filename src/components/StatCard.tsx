@@ -14,28 +14,21 @@ interface StatCardProps {
 }
 
 export function StatCard({ title, value, icon: Icon, trend, color = "blue" }: StatCardProps) {
-  const colorClasses = {
-    blue: "from-blue-500 to-blue-600",
-    purple: "from-purple-500 to-purple-600",
-    green: "from-green-500 to-green-600",
-    orange: "from-orange-500 to-orange-600",
-  };
-
   return (
-    <Card className="relative overflow-hidden">
-      <CardContent className="p-6">
+    <Card className="professional-card">
+      <CardContent className="p-4">
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-sm font-medium text-gray-600">{title}</p>
-            <p className="text-2xl font-bold mt-1">{value}</p>
+            <p className="text-xs font-medium text-gray-500 uppercase tracking-wider">{title}</p>
+            <p className="text-2xl font-semibold mt-1 text-gray-900">{value}</p>
             {trend && (
-              <p className={`text-xs mt-1 ${trend.isPositive ? 'text-green-600' : 'text-red-600'}`}>
-                {trend.isPositive ? '↗' : '↘'} {trend.value}
+              <p className={`text-xs mt-1 flex items-center gap-1 ${trend.isPositive ? 'text-green-600' : 'text-red-600'}`}>
+                <span>{trend.isPositive ? '↗' : '↘'}</span> {trend.value}
               </p>
             )}
           </div>
-          <div className={`p-3 rounded-lg bg-gradient-to-r ${colorClasses[color as keyof typeof colorClasses]}`}>
-            <Icon className="w-6 h-6 text-white" />
+          <div className="p-2.5 bg-primary/10 rounded-lg">
+            <Icon className="w-5 h-5 text-primary" />
           </div>
         </div>
       </CardContent>
