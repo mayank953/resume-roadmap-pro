@@ -45,8 +45,8 @@ const mainItems = [
     icon: Map,
   },
   {
-    title: "Analytics",
-    url: "/analytics",
+    title: "Projects",
+    url: "/projects",
     icon: BarChart3,
   },
 ];
