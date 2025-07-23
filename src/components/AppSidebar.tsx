@@ -7,7 +7,9 @@ import {
   User,
   Settings,
   BarChart3,
-  HelpCircle
+  HelpCircle,
+  Code2,
+  FolderOpen
 } from "lucide-react";
 import {
   Sidebar,
@@ -47,7 +49,7 @@ const mainItems = [
   {
     title: "Projects",
     url: "/projects",
-    icon: BarChart3,
+    icon: FolderOpen,
   },
 ];
 

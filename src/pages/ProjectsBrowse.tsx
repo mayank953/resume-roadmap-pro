@@ -96,7 +96,7 @@ const projectsData = [
 
 const categories = ["All", "Full Stack", "AI/ML", "Mobile", "DevOps", "Blockchain"];
 
-export default function Projects() {
+export default function ProjectsBrowse() {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [projects] = useState(projectsData);
 

@@ -133,7 +133,7 @@ export default function ProjectDetail() {
     <div className="space-y-6">
       {/* Header */}
       <div className="flex items-center gap-4">
-        <Link to="/projects">
+        <Link to="/projects/browse">
           <Button variant="outline" size="sm">
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Projects
@@ -184,9 +184,10 @@ export default function ProjectDetail() {
 
           {/* Tabs Content */}
           <Tabs value={activeTab} onValueChange={setActiveTab}>
-            <TabsList className="grid w-full grid-cols-4">
+            <TabsList className="grid w-full grid-cols-5">
               <TabsTrigger value="overview">Overview</TabsTrigger>
               <TabsTrigger value="curriculum">Curriculum</TabsTrigger>
+              <TabsTrigger value="lms">Learn</TabsTrigger>
               <TabsTrigger value="architecture">Architecture</TabsTrigger>
               <TabsTrigger value="assignments">Assignments</TabsTrigger>
             </TabsList>
@@ -390,6 +391,121 @@ export default function ProjectDetail() {
                                 {platform}
                               </Badge>
                             ))}
+                          </div>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </CardContent>
+              </Card>
+            </TabsContent>
+
+            <TabsContent value="lms" className="space-y-6">
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <PlayCircle className="w-5 h-5" />
+                    Interactive Learning Platform
+                  </CardTitle>
+                  <CardDescription>
+                    Watch videos, complete quizzes, and practice with hands-on exercises
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-6">
+                  {/* Current Lesson */}
+                  <div className="bg-gradient-to-r from-primary/5 to-primary/10 p-6 rounded-lg border border-primary/20">
+                    <div className="flex items-center justify-between mb-4">
+                      <h3 className="font-semibold text-lg">Current Lesson</h3>
+                      <Badge className="bg-blue-100 text-blue-800">In Progress</Badge>
+                    </div>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                      <div>
+                        <h4 className="font-medium mb-2">State Management Setup</h4>
+                        <p className="text-sm text-gray-600 mb-4">
+                          Learn how to implement Redux Toolkit for state management in your e-commerce application.
+                        </p>
+                        <div className="flex items-center gap-4 text-sm">
+                          <div className="flex items-center gap-1">
+                            <Clock className="w-4 h-4" />
+                            40 min
+                          </div>
+                          <div className="flex items-center gap-1">
+                            <Video className="w-4 h-4" />
+                            HD Video
+                          </div>
+                        </div>
+                      </div>
+                      <div className="aspect-video bg-card rounded-lg border flex items-center justify-center">
+                        <Button size="lg">
+                          <PlayCircle className="w-6 h-6 mr-2" />
+                          Continue Watching
+                        </Button>
+                      </div>
+                    </div>
+                    <div className="mt-4">
+                      <div className="flex justify-between text-sm mb-2">
+                        <span>Progress</span>
+                        <span>65%</span>
+                      </div>
+                      <Progress value={65} className="h-2" />
+                    </div>
+                  </div>
+
+                  {/* Quiz Section */}
+                  <Card>
+                    <CardHeader>
+                      <CardTitle className="text-lg">Practice Quiz</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="space-y-4">
+                        <div className="p-4 bg-muted/50 rounded-lg">
+                          <h4 className="font-medium mb-2">Question 1 of 5</h4>
+                          <p className="text-sm mb-4">
+                            Which Redux Toolkit function is used to create a store?
+                          </p>
+                          <div className="space-y-2">
+                            <Button variant="outline" className="w-full justify-start">
+                              A) configureStore()
+                            </Button>
+                            <Button variant="outline" className="w-full justify-start">
+                              B) createStore()
+                            </Button>
+                            <Button variant="outline" className="w-full justify-start">
+                              C) setupStore()
+                            </Button>
+                          </div>
+                        </div>
+                        <div className="flex justify-between">
+                          <Button variant="outline">Previous</Button>
+                          <Button>Submit Answer</Button>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  {/* Practice Exercise */}
+                  <Card>
+                    <CardHeader>
+                      <CardTitle className="text-lg">Hands-on Exercise</CardTitle>
+                      <CardDescription>
+                        Practice what you've learned with interactive coding challenges
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="space-y-4">
+                        <div className="p-4 bg-muted/50 rounded-lg">
+                          <h4 className="font-medium mb-2">Exercise: Create a Redux Slice</h4>
+                          <p className="text-sm text-gray-600 mb-4">
+                            Create a Redux slice for managing the shopping cart state with actions for adding and removing items.
+                          </p>
+                          <div className="flex gap-2">
+                            <Button>
+                              <Code2 className="w-4 h-4 mr-2" />
+                              Open Code Editor
+                            </Button>
+                            <Button variant="outline">
+                              View Solution
+                            </Button>
                           </div>
                         </div>
                       </div>
