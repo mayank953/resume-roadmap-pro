@@ -13,6 +13,7 @@ import Roadmap from "./pages/Roadmap";
 import ProjectsLanding from "./pages/ProjectsLanding";
 import ProjectsBrowse from "./pages/ProjectsBrowse";
 import ProjectDetail from "./pages/ProjectDetail";
+import LMS from "./pages/LMS";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -38,7 +39,8 @@ const App = () => (
                   <Route path="/roadmap" element={<Roadmap />} />
             <Route path="/projects" element={<ProjectsLanding />} />
             <Route path="/projects/browse" element={<ProjectsBrowse />} />
-                  <Route path="/projects/:id" element={<ProjectDetail />} />
+            <Route path="/projects/:id" element={<ProjectDetail />} />
+            <Route path="/projects/:id/learn" element={<LMS />} />
                   {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                   <Route path="*" element={<NotFound />} />
                 </Routes>
