@@ -24,6 +24,7 @@ import {
   SidebarHeader,
 } from "@/components/ui/sidebar";
 import { Link, useLocation } from "react-router-dom";
+import { useSidebar } from "@/components/ui/sidebar";
 
 const mainItems = [
   {
@@ -73,9 +74,10 @@ const accountItems = [
 
 export function AppSidebar() {
   const location = useLocation();
+  const { state } = useSidebar();
 
   return (
-    <Sidebar className="border-r border-gray-200/60">
+    <Sidebar className="border-r border-gray-200/60" collapsible="icon">
       <SidebarHeader className="p-6 border-b border-gray-200/50">
         <div className="flex items-center gap-3">
           <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
@@ -105,9 +107,9 @@ export function AppSidebar() {
                           ? 'bg-primary/10 text-primary border border-primary/20'
                           : 'text-gray-700 hover:bg-gray-100 hover:text-gray-900'
                       }`}
-                    >
+                     >
                       <item.icon className="w-4 h-4" />
-                      <span className="text-sm font-medium">{item.title}</span>
+                      {state !== "collapsed" && <span className="text-sm font-medium">{item.title}</span>}
                     </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
@@ -132,9 +134,9 @@ export function AppSidebar() {
                           ? 'bg-primary/10 text-primary border border-primary/20'
                           : 'text-gray-700 hover:bg-gray-100 hover:text-gray-900'
                       }`}
-                    >
+                     >
                       <item.icon className="w-4 h-4" />
-                      <span className="text-sm font-medium">{item.title}</span>
+                      {state !== "collapsed" && <span className="text-sm font-medium">{item.title}</span>}
                     </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>

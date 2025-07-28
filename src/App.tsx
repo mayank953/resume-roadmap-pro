@@ -29,7 +29,7 @@ const App = () => (
             <AppSidebar />
             <main className="flex-1 flex flex-col">
               <div className="sticky top-0 z-10 bg-white/95 backdrop-blur-sm border-b border-gray-200/50 p-4">
-                <SidebarTrigger className="lg:hidden" />
+                <SidebarTrigger />
               </div>
               <div className="flex-1 p-6 overflow-auto">
                 <Routes>
