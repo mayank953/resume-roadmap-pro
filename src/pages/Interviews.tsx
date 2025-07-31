@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
+import { BrandBuilder } from "@/components/BrandBuilder";
 
 export default function Interviews() {
   const [selectedCategory, setSelectedCategory] = useState("all");
@@ -99,6 +100,16 @@ export default function Interviews() {
           Start New Interview
         </Button>
       </div>
+
+      {/* Brand Building for interview progress */}
+      <BrandBuilder 
+        achievement={{
+          type: 'interview_complete',
+          title: 'Technical Interview Session',
+          description: 'Completed another interview practice session - building confidence and skills!'
+        }}
+        context="interview"
+      />
 
       <Tabs defaultValue="practice" className="space-y-6">
         <TabsList className="grid w-full grid-cols-3">

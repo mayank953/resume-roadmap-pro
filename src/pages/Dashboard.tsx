@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
 import { useNavigate } from "react-router-dom";
+import { BrandBuilder } from "@/components/BrandBuilder";
 
 export default function Dashboard() {
   const navigate = useNavigate();
@@ -102,6 +103,17 @@ export default function Dashboard() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Welcome Section */}
         <div className="lg:col-span-2 space-y-6">
+          {/* Brand Building Achievement */}
+          <BrandBuilder 
+            achievement={{
+              type: 'roadmap_progress',
+              title: 'Frontend Development Progress',
+              description: 'Keep building your professional brand by sharing your learning journey!',
+              progress: 65
+            }}
+            context="dashboard"
+          />
+
           <Card className="professional-card">
             <CardContent className="p-8 text-center">
               <h2 className="text-2xl font-semibold text-gray-900 mb-2">Welcome</h2>
