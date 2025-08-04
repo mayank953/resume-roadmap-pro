@@ -17,6 +17,7 @@ import ProjectsBrowse from "./pages/ProjectsBrowse";
 import ProjectDetail from "./pages/ProjectDetail";
 import LMS from "./pages/LMS";
 import Jobs from "./pages/Jobs";
+import JobsLanding from "./pages/JobsLanding";
 import JobDetail from "./pages/JobDetail";
 import NotFound from "./pages/NotFound";
 
@@ -46,7 +47,8 @@ const App = () => (
                   <Route path="/projects/browse" element={<ProjectsBrowse />} />
                   <Route path="/projects/:id" element={<ProjectDetail />} />
                   <Route path="/lms/:projectId" element={<LMS />} />
-                  <Route path="/jobs" element={<Jobs />} />
+                  <Route path="/jobs" element={<JobsLanding />} />
+                  <Route path="/jobs/browse" element={<Jobs />} />
                   <Route path="/jobs/:id" element={<JobDetail />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
