@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/AppSidebar";
+import Index from "./pages/Index";
 import Dashboard from "./pages/Dashboard";
 import Interviews from "./pages/Interviews";
 import Resume from "./pages/Resume";
@@ -14,6 +15,8 @@ import ProjectsLanding from "./pages/ProjectsLanding";
 import ProjectsBrowse from "./pages/ProjectsBrowse";
 import ProjectDetail from "./pages/ProjectDetail";
 import LMS from "./pages/LMS";
+import Jobs from "./pages/Jobs";
+import JobDetail from "./pages/JobDetail";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -33,15 +36,17 @@ const App = () => (
               </div>
               <div className="flex-1 p-6 overflow-auto">
                 <Routes>
-                  <Route path="/" element={<Dashboard />} />
+                  <Route path="/" element={<Index />} />
+                  <Route path="/dashboard" element={<Dashboard />} />
                   <Route path="/interviews" element={<Interviews />} />
                   <Route path="/resume" element={<Resume />} />
                   <Route path="/roadmap" element={<Roadmap />} />
-            <Route path="/projects" element={<ProjectsLanding />} />
-            <Route path="/projects/browse" element={<ProjectsBrowse />} />
-            <Route path="/projects/:id" element={<ProjectDetail />} />
-            <Route path="/projects/:id/learn" element={<LMS />} />
-                  {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+                  <Route path="/projects" element={<ProjectsLanding />} />
+                  <Route path="/projects/browse" element={<ProjectsBrowse />} />
+                  <Route path="/projects/:id" element={<ProjectDetail />} />
+                  <Route path="/lms/:projectId" element={<LMS />} />
+                  <Route path="/jobs" element={<Jobs />} />
+                  <Route path="/jobs/:id" element={<JobDetail />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
               </div>

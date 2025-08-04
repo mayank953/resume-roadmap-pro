@@ -52,6 +52,11 @@ const mainItems = [
     url: "/projects",
     icon: FolderOpen,
   },
+  {
+    title: "Jobs",
+    url: "/jobs",
+    icon: Code2,
+  },
 ];
 
 const accountItems = [
@@ -84,8 +89,8 @@ export function AppSidebar() {
             <Brain className="w-5 h-5 text-white" />
           </div>
           <div className="flex flex-col">
-            <span className="font-semibold text-lg text-gray-900">CareerAI</span>
-            <span className="text-xs text-gray-500">Professional Platform</span>
+            <span className="font-semibold text-lg text-gray-900">Evolvue</span>
+            <span className="text-xs text-gray-500">Learn • Build • Share</span>
           </div>
         </div>
       </SidebarHeader>
